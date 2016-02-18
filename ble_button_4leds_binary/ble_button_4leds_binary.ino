@@ -28,7 +28,7 @@ BLEDescriptor buttonDescriptor = BLEDescriptor("2901", "Button State");
 #define LED_PIN3 4
 #define LED_PIN4 5
 
-int maxLED_count = 4;
+int maxLED_count = 15;
 int LED_count = 0;
 int count = 0;
 bool pressed = false;
@@ -91,28 +91,97 @@ void readButton() {
   }
 }
 
-void ledDisplay(){
-  if (LED_count >= 1){
-    digitalWrite(LED_PIN1,HIGH);
+void ledDisplay() {
+
+  switch (LED_count) {
+    case 1:
+      // 0001
+      digitalWrite(LED_PIN1, HIGH);
+      break;
+    case 2:
+      // 0010
+      digitalWrite(LED_PIN2, HIGH);
+      break;
+    case 3:
+      // 0011
+      digitalWrite(LED_PIN1, HIGH);
+      digitalWrite(LED_PIN2, HIGH);
+      break;
+    case 4:
+      // 0100
+      digitalWrite(LED_PIN3, HIGH);
+      break;
+    case 5:
+      // 0101
+      digitalWrite(LED_PIN1, HIGH);
+      digitalWrite(LED_PIN3, HIGH);
+      break;
+    case 6:
+      // 0110
+      digitalWrite(LED_PIN2, HIGH);
+      digitalWrite(LED_PIN3, HIGH);
+      break;
+    case 7:
+      // 0111
+      digitalWrite(LED_PIN1, HIGH);
+      digitalWrite(LED_PIN2, HIGH);
+      digitalWrite(LED_PIN3, HIGH);
+      break;
+    case 8:
+      // 1000
+      digitalWrite(LED_PIN4, HIGH);
+      break;
+    case 9:
+      // 1001
+      digitalWrite(LED_PIN1, HIGH);
+      digitalWrite(LED_PIN4, HIGH);
+      break;
+    case 10:
+      // 1010
+      digitalWrite(LED_PIN2, HIGH);
+      digitalWrite(LED_PIN4, HIGH);
+      break;
+    case 11:
+      // 1011
+      digitalWrite(LED_PIN1, HIGH);
+      digitalWrite(LED_PIN2, HIGH);
+      digitalWrite(LED_PIN4, HIGH);
+      break;
+    case 12:
+      // 1100
+      digitalWrite(LED_PIN3, HIGH);
+      digitalWrite(LED_PIN4, HIGH);
+      break;
+    case 13:
+      // 1101
+      digitalWrite(LED_PIN1, HIGH);
+      digitalWrite(LED_PIN3, HIGH);
+      digitalWrite(LED_PIN4, HIGH);
+      break;
+    case 14:
+      // 1110
+      digitalWrite(LED_PIN2, HIGH);
+      digitalWrite(LED_PIN3, HIGH);
+      digitalWrite(LED_PIN4, HIGH);
+      break;
+    case 15:
+      // 1111
+      digitalWrite(LED_PIN1, HIGH);
+      digitalWrite(LED_PIN2, HIGH);
+      digitalWrite(LED_PIN3, HIGH);
+      digitalWrite(LED_PIN4, HIGH);
+      break;
   }
-  if (LED_count >= 2){
-    digitalWrite(LED_PIN2,HIGH);
-  }
-  if (LED_count >= 3){
-    digitalWrite(LED_PIN3,HIGH);
-  }
-  if (LED_count == 4){
-    digitalWrite(LED_PIN4,HIGH);
-  }
+
   delay(200);
   //turn off all LEDs
-  digitalWrite(LED_PIN1,LOW);
-  digitalWrite(LED_PIN2,LOW);
-  digitalWrite(LED_PIN3,LOW);
-  digitalWrite(LED_PIN4,LOW);
- 
+  digitalWrite(LED_PIN1, LOW);
+  digitalWrite(LED_PIN2, LOW);
+  digitalWrite(LED_PIN3, LOW);
+  digitalWrite(LED_PIN4, LOW);
+
   // reset LED counter when max is readched
-  if (LED_count == maxLED_count){
+  if (LED_count == maxLED_count) {
     LED_count = 0;
   }
 }
