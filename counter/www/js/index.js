@@ -73,7 +73,7 @@ var app = {
         detailPage.hidden = false;
     },
     onCountChange: function(buffer) {
-        var data = new Float32Array(buffer);
+        var data = new Uint8Array(buffer);
         var count = data[0];
         var message = "<span>You've knit<br>" + count + " stitches</span>";
         stitchCount.innerHTML = message;
