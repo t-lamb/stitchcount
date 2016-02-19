@@ -16,8 +16,8 @@ BLEPeripheral blePeripheral = BLEPeripheral(BLE_REQ, BLE_RDY, BLE_RST);
 BLEService buttonService = BLEService("FBE0");
 
 // create characteristic
-BLEUnsignedIntCharacteristic buttonCharacteristic = BLEUnsignedIntCharacteristic("FBE1", BLERead);
-BLEDescriptor buttonDescriptor = BLEDescriptor("2901", "Button State");
+BLEUnsignedIntCharacteristic buttonCharacteristic = BLEUnsignedIntCharacteristic("FBE1", BLERead | BLENotify | BLEBroadcast);
+BLEDescriptor buttonDescriptor = BLEDescriptor("2901", "Count");
 
 // #define BUTTON_PIN 7 // RedBear Blend
 // #define BUTTON_PIN D2 // RedBear Nano
