@@ -73,9 +73,9 @@ var app = {
         detailPage.hidden = false;
     },
     onCountChange: function(buffer) {
-        var data = new Floar32Array(buffer);
+        var data = new Float32Array(buffer);
         var count = data[0];
-        var message = count + "stitches";
+        var message = "<span>You've knit<br>" + count + " stitches</span>";
         stitchCount.innerHTML = message;
     },
     disconnect: function(e) {

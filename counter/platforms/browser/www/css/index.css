@@ -8,9 +8,9 @@ body {
     -webkit-user-select: none;       /* prevent copy paste, to allow, change 'none' to 'text' */
     -webkit-appearance: none;
 
-    font-family: "Helvetica Neue";
-    color: #2a2a2a;
-    background-color: #f0f0ff;
+    font-family: 'Muli', sans-serif;
+    color: #22313F;
+    background-color: #EFF9F8;
 }
 
 h1 {
@@ -18,7 +18,12 @@ h1 {
 }
 
 h2 {
+    font-size: 2em;
+    padding: 1em 0 0 0;
+    font-weight: 300;
+    font-style: italic;
     text-align: center;
+    color: #4183D7;
 }
 
 ul {
@@ -29,9 +34,7 @@ ul {
 
 li {
     margin-left: -40px;
-    padding: 5px;
-    padding-top: 10px;
-    min-height: 50px;
+    padding: 1em .5em;
     border-top: 1px solid #d3d3d3;
     font-size: 0.9em;
 }
@@ -39,13 +42,19 @@ li {
 button {
     -webkit-appearance: none;
     font-size: 2em;
-    border-radius: 0px;
-    border: 1px solid black;
-    padding: 10px;
-    margin: 10px;
+    border-radius: 3px;
+    border: none;
+    padding: .6em 2em;
+    margin: 10px 0;
     min-width: 200px;
-    background-color: #f0f0ff;
-    color: blue;
+    background-color: #03C9A9;
+    color: #FFFFFF;
+    font-family: 'Muli', sans-serif;
+}
+span {
+    display: block;
+    font-size: 3rem;
+    padding: 0 0 1em 0;
 }
 
 #mainPage {

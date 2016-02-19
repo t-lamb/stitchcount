@@ -58,6 +58,7 @@ void setup() {
   // begin initialization
   blePeripheral.begin();
   Serial.println(F("Bluetooth Button"));
+  buttonCharacteristic.broadcast();
 }
 
 void loop() {
